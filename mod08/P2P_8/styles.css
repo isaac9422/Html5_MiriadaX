@@ -1,0 +1,16 @@
+
+	#cont{
+		width: 340px;
+		height: 360px;
+		position:relative;
+		background:url(esfera.png) no-repeat;
+		background:size: contain;}
+	#crono{
+		position:absolute;
+		top: 120px;
+		left: 60px;
+		font-size:55px;}
+	#lista{
+		font-size:24px;}
+	#marco{
+		margin-left:40px;}

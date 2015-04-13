@@ -1,0 +1,11 @@
+.imgn {
+	float:left;
+	width: 20%;
+	padding:5px;
+	marginXright:5px;
+	marginXboSom:5px;
+	border:1pxsolid#666;
+}
+.clear{
+	clear: both;
+}

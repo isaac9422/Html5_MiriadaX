@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<title>P2P Módulo 6</title>
+	<meta charset="utf-8">
+	<link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<h3 id="message"></h3>
+	<table id="tabla">
+		
+	</table>
+	
+	<script type="text/javascript">
+	var input = prompt("Ingrese la propiedad a imprimir");
+	input = input.toLowerCase();
+	if(typeof(window[input]) === "object"){
+		var t = document.getElementById("tabla");
+		t.innerHTML+="	<tr><th>Propiedad</th><th>Valor</th></tr>";
+		for(var i in window[input]){
+			if(typeof(window[input][i]) === "object" || typeof(window[input][i]) === "function"){
+				t.innerHTML+="<tr><td>"+i+"</td><td> No es imprimible </td></tr>";
+			}
+			else{
+				t.innerHTML+="<tr><td>"+i+"</td><td> "+window[input][i]+"</td></tr>";
+			}
+		}
+	}
+	else{
+		var h = document.getElementById("message");
+		h.innerHTML+=input+" No es una propiedad de window. ";
+	}
+	</script>
+	
+</body>
+</html>

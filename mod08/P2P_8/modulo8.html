@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><title>Cronómetro</title><meta charset="UTF-8">
+<script type="text/javascript" src="zepto.min.js" > </script>
+<script type="text/javascript" src="touch.js" > </script>
+<script type="text/javascript">
+  $(function(){
+    localStorage.c = (localStorage.c || "0.0");
+    localStorage.i = (localStorage.i || "0");	 
+    var t, lista = $("#lista"),cl = $("#crono");
+
+    function incr()     { localStorage.c = +localStorage.c + 0.1; }
+    function mostrar()  { cl.html((+localStorage.c).toFixed(1)); };
+    function arrancar() { t=setInterval(function(){incr(); mostrar()}, 100);};
+    function parar()    { clearInterval(t);  t=undefined; localStorage.i = +localStorage.i + 1; imprimir() };
+    function cambiar()  { if (!t) arrancar(); else parar(); };
+    function imprimir() { lista.append(+localStorage.i+"	       "+(+localStorage.c).toFixed(1)+"<br>"); };
+
+    $("#cambiar").on('click', cambiar);
+    $("#crono").on('tap', cambiar);
+    $("#inicializar").on('click', function(){
+    	if(!t) 	{	localStorage.c="0.0";
+    			localStorage.i="0";
+		    	lista.html("");}
+     	mostrar();});
+    $("#crono").on('swipe', function(){
+    	if(!t) 	{	localStorage.c="0.0";
+		    	localStorage.i="0";
+		    	lista.html("");}
+     	mostrar();});
+    mostrar();
+  });
+</script>
+<link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div id="marco">
+<h2>Cronómetro</h2>
+<div id="cont">
+<h3><span id="crono"> 0.0 </span> </h3>
+</div>
+<button type="button" id="cambiar"> arrancar/parar </button>
+<button type="button" id="inicializar">  inicializar </button>
+<br>
+<br>
+<div id="lista"></div>
+</div>
+</body>
+</html>
