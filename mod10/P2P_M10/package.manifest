@@ -1,0 +1,15 @@
+{
+	"version" : "1.0",
+	"name" : "Localizator",
+	"description": "Localizador y enrutador",
+	"package_path": "https://www.dropbox.com/s/ac6019bheas83lf/P2P_M10.zip?dl=1",
+	"developer" : {
+		"name" : "Isaac Palacios",
+		"url" : "http://isaac9422.neocities.org/"
+	},
+	"permissions": {
+		"geolocation":{
+			"description": "Requerido para el autocompletado en la pantalla compartida"
+		}
+	} 
+}

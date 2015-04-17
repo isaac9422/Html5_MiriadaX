@@ -1,0 +1,20 @@
+{
+	"version" : "1.0",
+	"name" : "Localizador",
+	"description": "Localizador y enrutador",
+	"launch_path": "/P2P_M10/36-geo_routes.html",
+	"icons" : {
+		"16" : "http://isaac9422.neocities.org/P2P_M10/index.jpeg",
+		"96" : "http://isaac9422.neocities.org/P2P_M10/images.jpeg",
+		"128": "http://isaac9422.neocities.org/P2P_M10/images.jpeg"
+	},
+	"developer" : {
+		"name" : "Isaac Palacios",
+		"url" : "http://isaac9422.neocities.org/"
+	},
+	"permissions": {
+		"geolocation":{
+			"description": "Requerido para el autocompletado en la pantalla compartida"
+		}
+	} 
+}
